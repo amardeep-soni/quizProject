@@ -21,20 +21,20 @@
                     <div class="error-txt">This is an error message!</div>
                     <div class="success-txt">This is an success message!</div>
                     <div class="input-field">
-                        <input type="text" placeholder="Enter your name" required>
+                        <input type="text" name="name" placeholder="Enter your name" required>
                         <i class="fa-regular fa-user"></i>
                     </div>
                     <div class="input-field">
-                        <input type="text" placeholder="Enter your email" required>
+                        <input type="text" name="email" placeholder="Enter your email" required>
                         <i class="fa-regular fa-envelope"></i>
                     </div>
                     <div class="input-field">
-                        <input type="password" class="password" placeholder="Create a password" required>
+                        <input type="password" class="password" name="password" placeholder="Create a password" required>
                         <i class="fa-solid fa-lock"></i>
                     </div>
 
                     <div class="input-field button">
-                        <input type="button" value="Signup">
+                        <input type="submit" value="Signup">
                     </div>
                 </form>
 
@@ -46,7 +46,7 @@
             </div>
         </div>
     </div>
-
+    <script src="js/signup.js"></script>
 
 </body>
 
