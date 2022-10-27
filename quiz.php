@@ -31,6 +31,9 @@ if (!isset($_SESSION['unique_id'])) {
                 <li class="nav-item active">
                     <a class="nav-link" href="quiz.php">Home</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="score.php">Score</a>
+                </li>
             </ul>
             <div class="navbar-text">
                 <a href="php/logout.php">Logout</a>
@@ -140,6 +143,7 @@ if (!isset($_SESSION['unique_id'])) {
                                     <h2>You answered ${resultCount}/${questionCount} questions correctly</h2>
                                 <div class="d-flex">
                                     <button onclick="location.href='selectQuiz.php';">Give Quiz Again</button>
+                                    <button onclick="location.href='score.php';">Go in Score</button>
                                 </div>`;
                                 let xhr = new XMLHttpRequest();
                                 xhr.open("GET", "php/addResult.php?chap=" + chap + "&score=" + resultCount + "&ques=" + questionCount, true);

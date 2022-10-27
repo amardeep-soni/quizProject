@@ -100,3 +100,59 @@ body {
   outline: none;
   background-color: #44b927;
 }
+
+/* score */
+#scoreCont {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+#scoreTable {
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 0.9em;
+  font-family: sans-serif;
+  min-width: 500px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+#score-cont {
+  padding: 15px;
+  background-color: white;
+  border-radius: 15px;
+}
+
+#score-cont thead tr {
+  background-color: black;
+  color: white;
+}
+
+#score-cont thead tr th {
+  text-align: center;
+}
+
+#score-cont tbody tr {
+  background-color: white;
+}
+
+#score-cont table th,
+#score-cont table td {
+  padding: 8px;
+  text-align: center;
+}
+
+#score-cont table td {
+  font-size: 18px;
+}
+
+#score-cont table tr:nth-child(even) {
+  background-color: #cedde0;
+}
+
+#score-cont table tbody tr:hover {
+  background-color: #4070f4;
+  color: white;
+}

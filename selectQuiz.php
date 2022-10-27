@@ -30,6 +30,9 @@ $unique_id = $_SESSION['unique_id'];
                 <li class="nav-item active">
                     <a class="nav-link" href="quiz.php">Home</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="score.php">Score</a>
+                </li>
             </ul>
             <div class="navbar-text">
                 <a href="php/logout.php">Logout</a>
