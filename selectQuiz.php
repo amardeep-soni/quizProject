@@ -80,7 +80,7 @@ $unique_id = $_SESSION['unique_id'];
                                 errorText.style.display = 'none';
                             }, 1000);
                         } else {
-                            console.log('Question Found');
+                            location.href = 'quiz.php?chap=' + chap;
                         }
                     }
                 }
