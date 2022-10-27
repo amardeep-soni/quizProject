@@ -18,6 +18,9 @@ loginBtn.onclick = () => {
                     successText.textContent = 'You are Logged in';
                     successText.style.display = 'block';
                     errorText.style.display = 'none';
+                    setTimeout(() => {
+                        location.href = "selectQuiz.php";
+                    }, 1500);
                 } else {
                     errorText.textContent = data;
                     errorText.style.display = 'block'
