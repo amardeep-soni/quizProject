@@ -21,16 +21,16 @@
                     <div class="error-txt">This is an error message!</div>
                     <div class="success-txt">This is an success message!</div>
                     <div class="input-field">
-                        <input type="text" placeholder="Enter your email" required>
+                        <input type="text" name="email" placeholder="Enter your email" required>
                         <i class="fa-regular fa-user"></i>
                     </div>
                     <div class="input-field">
-                        <input type="password" class="password" placeholder="Enter your password" required>
+                        <input type="password" name="password" class="password" placeholder="Enter your password" required>
                         <i class="fa-solid fa-lock"></i>
                     </div>
 
                     <div class="input-field button">
-                        <input type="button" value="Login">
+                        <input type="submit" value="Login">
                     </div>
                 </form>
 
@@ -43,7 +43,7 @@
         </div>
     </div>
 
-
+    <script src="js/login.js"></script>
 </body>
 
 </html>
