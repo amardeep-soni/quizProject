@@ -17,7 +17,9 @@ loginBtn.onclick = () => {
                     successText.textContent = 'You are Logged in';
                     successText.style.display = 'block';
                     errorText.style.display = 'none';
-                    console.log('Admin is logged in');
+                    setTimeout(() => {
+                        location.href = "users.php";
+                    }, 1500);
                 } else {
                     errorText.textContent = data;
                     errorText.style.display = 'block'
