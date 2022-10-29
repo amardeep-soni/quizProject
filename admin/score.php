@@ -20,7 +20,7 @@ $currentPage = "score";
 </head>
 
 <body id="quizBody">
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="users.php">Quiz App</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -36,6 +36,9 @@ $currentPage = "score";
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="chapter.php">Chapter</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="question.php">Questions</a>
                 </li>
             </ul>
             <div class="navbar-text">
