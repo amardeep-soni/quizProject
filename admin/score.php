@@ -4,7 +4,7 @@ session_start();
 if (!$_SESSION['admin']) {
     header("Location: adminLogin.php");
 }
-$currentPage = "users";
+$currentPage = "score";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -20,7 +20,7 @@ $currentPage = "users";
 </head>
 
 <body id="quizBody">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="users.php">Quiz App</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -28,10 +28,10 @@ $currentPage = "users";
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto nav-pills">
-            <li class="nav-item active">
+                <li class="nav-item">
                     <a class="nav-link" href="users.php">Users</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item active">
                     <a class="nav-link" href="score.php">Score</a>
                 </li>
             </ul>
@@ -43,35 +43,39 @@ $currentPage = "users";
 
     <div id="cont">
         <div id="tableCont">
-            <h2>Users</h2>
+            <h2>Scores</h2>
             <table id="table" class="table w-100">
                 <thead>
                     <tr>
                         <th>S.N.</th>
                         <th>Name</th>
-                        <th>Email</th>
-                        <th>Password</th>
+                        <th>Chapter</th>
+                        <th>Question Solved</th>
+                        <th>Correct</th>
+                        <th>Wrong</th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php
                     include "../php/config.php";
-                    $sql = mysqli_query($conn, "SELECT * FROM users");
+                    $sql = mysqli_query($conn, "SELECT * FROM score");
                     if ($sql) {
                         $rowNum = mysqli_num_rows($sql);
                         if ($rowNum) {
                             $count = 1;
                             while ($data = mysqli_fetch_assoc($sql)) {
                                 echo "<tr>
-                                        <td>{$count}</td>
-                                        <td>{$data['name']}</td>
-                                        <td>{$data['email']}</td>
-                                        <td>{$data['password']}</td>
-                                     </tr>";
+                                <td>{$count}</td>
+                                <td>{$data['name']}</td>
+                                <td>{$data['chapter']}</td>
+                                <td>{$data['question_solved']}</td>
+                                <td>{$data['correct']}</td>
+                                <td>{$data['wrong']}</td>
+                            </tr>";
                                 $count++;
                             }
                         } else {
-                            echo "<tr><td colspan='4'>No any Users Found</td></tr>";
+                            echo "<tr><td colspan='6'>No any Score Found</td></tr>";
                         }
                     }
                     ?>
