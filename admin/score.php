@@ -34,6 +34,9 @@ $currentPage = "score";
                 <li class="nav-item active">
                     <a class="nav-link" href="score.php">Score</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="chapter.php">Chapter</a>
+                </li>
             </ul>
             <div class="navbar-text">
                 <a href="php/adminLogout.php">Logout</a>
