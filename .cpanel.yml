@@ -2,4 +2,4 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/amardeep/repositories/quiz/
-    - /bin/cp * $DEPLOYPATH
+    - -/bin/cp -R * $DEPLOYPATH
