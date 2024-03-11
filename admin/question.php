@@ -36,9 +36,7 @@ $currentPage = "question";
                         <div id="error-txt">This is an Error message!</div>
                         <div id="success-txt">This is an Succes message!</div>
                         <div class="form-group">
-                            <!-- <label for="inputChapter">Select Quiz Code:</label> -->
-                            <!-- <input type="text" class="form-control" name="chapter" id="inputChapter"> -->
-                            <select name="quizCode" class="form-control" id="selectChapter">
+                            <select name="quizCode" class="form-control" id="selectQuizCode">
                                 <option value="" selected>Select Quiz Code</option>
                                 <?php
                                 include "../php/config.php";

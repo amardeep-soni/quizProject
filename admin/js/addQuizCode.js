@@ -4,7 +4,7 @@ const form = document.getElementById("form"),
     successText = document.getElementById("success-txt");
 addChap.onclick = () => {
     let xhr = new XMLHttpRequest();
-    xhr.open("POST", "php/addChapter.php", true);
+    xhr.open("POST", "php/addQuizCode.php", true);
     xhr.onload = () => {
         if (xhr.readyState == XMLHttpRequest.DONE) {
             if (xhr.status == 200) {

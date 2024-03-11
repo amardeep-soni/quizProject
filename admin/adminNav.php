@@ -16,10 +16,10 @@
                                 } ?>">
                 <a class="nav-link" href="score.php">Score</a>
             </li>
-            <li class="nav-item <?php if ($currentPage == 'quiz_name') {
+            <li class="nav-item <?php if ($currentPage == 'quiz_code') {
                                     echo 'active';
                                 } ?>">
-                <a class="nav-link" href="quiz_name.php">Quiz Name</a>
+                <a class="nav-link" href="quiz_code.php">Quiz Name</a>
             </li>
             <li class="nav-item <?php if ($currentPage == 'question') {
                                     echo 'active';

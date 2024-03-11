@@ -37,8 +37,7 @@ $currentPage = "quiz";
                     if ($rowNum) {
                         while ($row = mysqli_fetch_assoc($sql)) {
                             $quizCode = ucfirst($row['quiz_code']);
-                            echo "<a class='chapter' href='quiz.php?code={$row['quiz_code']}' id='{$row['quiz_code']}' >$quizCode</a>";
-                            // quiz.php?chap={$row['chapter_name']}
+                            echo "<a class='quizCode' href='quiz.php?code={$row['quiz_code']}' id='{$row['quiz_code']}' >$quizCode</a>";
                         }
                     } else {
                         echo "No any Quizes Found1";
