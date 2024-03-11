@@ -25,8 +25,8 @@ $currentPage = "quiz";
 
     <div class="cont">
         <div class="quiz-container p-4" id="quiz">
-            <div id="error-txt">This is an error message!</div>
-            <div id="success-txt">This is an error message!</div>
+            <div id="error-txt"></div>
+            <div id="success-txt"></div>
             <div id="quiz-header">
 
             </div>
@@ -50,7 +50,7 @@ $currentPage = "quiz";
             quizBtn = document.getElementById('quizBtn'),
             errorText = document.getElementById("error-txt"),
             successText = document.getElementById("success-txt");
-        var chap = "<?php echo $_GET['chap'] ?>";
+        var code = "<?php echo $_GET['code'] ?>";
         var quid = 0;
         let questionCount = 0;
         let resultCount = 0;
@@ -70,7 +70,7 @@ $currentPage = "quiz";
         quizBtn.onclick = () => {
             let answer = getSelected();
             let xhr = new XMLHttpRequest();
-            xhr.open("GET", "php/checkResult.php?q=" + quid + "&chap=" + chap + "&r=" + answer, true);
+            xhr.open("GET", "php/checkResult.php?q=" + quid + "&code=" + code + "&r=" + answer, true);
             xhr.onload = () => {
                 if (xhr.readyState == XMLHttpRequest.DONE) {
                     if (xhr.status == 200) {
@@ -113,7 +113,7 @@ $currentPage = "quiz";
             quid++;
 
             let xhr = new XMLHttpRequest(); // creating xml object
-            xhr.open("GET", "php/getQuestion.php?q=" + quid + "&chap=" + chap, true);
+            xhr.open("GET", "php/getQuestion.php?q=" + quid + "&code=" + code, true);
             xhr.onload = () => {
                 if (xhr.readyState == XMLHttpRequest.DONE) {
                     if (xhr.status === 200) {
@@ -129,7 +129,7 @@ $currentPage = "quiz";
                                     <button onclick="location.href='score.php';">Go in Score</button>
                                 </div>`;
                                 let xhr = new XMLHttpRequest();
-                                xhr.open("GET", "php/addResult.php?chap=" + chap + "&score=" + resultCount + "&ques=" + questionCount, true);
+                                xhr.open("GET", "php/addResult.php?code=" + code + "&score=" + resultCount + "&ques=" + questionCount, true);
                                 xhr.onload = () => {
                                     if (xhr.readyState == XMLHttpRequest.DONE) {
                                         if (xhr.status == 200) {

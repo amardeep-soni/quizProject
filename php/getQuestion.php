@@ -1,15 +1,14 @@
 <?php
 include_once "config.php";
 $quid = $_GET['q'];
-$chapter = $_GET['chap'];
+$code = $_GET['code'];
 $output = array();
-$sql = mysqli_query($conn, "SELECT * FROM questions where chapter = '$chapter'");
+$sql = mysqli_query($conn, "SELECT * FROM questions where quiz_code = '$code'");
 if ($sql) {
     $row_num = mysqli_num_rows($sql);
     $output['row'] = $row_num;
 }
-
-$sql2 = mysqli_query($conn, "SELECT * FROM questions where question_id = $quid AND chapter = '$chapter'");
+$sql2 = mysqli_query($conn, "SELECT * FROM questions where question_id = $quid AND quiz_code = '$code'");
 if ($sql2) {
     $row_num = mysqli_num_rows($sql2);
     if ($row_num) {

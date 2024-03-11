@@ -26,22 +26,22 @@ $currentPage = "quiz";
     <div class="cont">
         <div class="quiz-container p-4">
             <div id="error-txt">This is an error message!</div>
-            <h2>Select Chapter</h2>
+            <h2>Select Quiz</h2>
             <div class="selectValue">
                 <?php
                 include_once "php/config.php";
                 $output = array();
-                $sql = mysqli_query($conn, "SELECT * FROM chapter");
+                $sql = mysqli_query($conn, "SELECT * FROM quiz_names");
                 if ($sql) {
                     $rowNum = mysqli_num_rows($sql);
                     if ($rowNum) {
                         while ($row = mysqli_fetch_assoc($sql)) {
-                            $chapterName = ucfirst($row['chapter_name']);
-                            echo "<a class='chapter' onclick='checkQuestion(this.id)' id='{$row['chapter_name']}' >$chapterName</a>";
+                            $quizCode = ucfirst($row['quiz_code']);
+                            echo "<a class='chapter' href='quiz.php?code={$row['quiz_code']}' id='{$row['quiz_code']}' >$quizCode</a>";
                             // quiz.php?chap={$row['chapter_name']}
                         }
                     } else {
-                        echo "No any chapter";
+                        echo "No any Quizes Found1";
                     }
                 }
                 ?>
@@ -49,32 +49,6 @@ $currentPage = "quiz";
         </div>
 
     </div>
-    <script>
-        const errorText = document.getElementById("error-txt");
-
-        function checkQuestion(e) {
-            var chap = e;
-            let xhr = new XMLHttpRequest();
-            xhr.open("GET", "php/checkQuestion.php?chap=" + chap, true);
-            xhr.onload = () => {
-                if (xhr.readyState == XMLHttpRequest.DONE) {
-                    if (xhr.status == 200) {
-                        var data = xhr.response;
-                        if (data == 'no question') {
-                            errorText.innerText = 'NO Any Questions. In This Chapter!';
-                            errorText.style.display = 'block';
-                            setTimeout(() => {
-                                errorText.style.display = 'none';
-                            }, 1000);
-                        } else {
-                            location.href = 'quiz.php?chap=' + chap;
-                        }
-                    }
-                }
-            }
-            xhr.send();
-        }
-    </script>
 
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>

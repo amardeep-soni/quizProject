@@ -30,7 +30,7 @@ $currentPage = "score";
                 <thead>
                     <tr>
                         <th>Name</th>
-                        <th>Chapter</th>
+                        <th>Quiz Code</th>
                         <th>Question Solved</th>
                         <th>Correct</th>
                         <th>Wrong</th>
@@ -46,7 +46,7 @@ $currentPage = "score";
                             while ($data = mysqli_fetch_assoc($sql)) {
                                 echo "<tr>
                                 <td>{$data['name']}</td>
-                                <td>{$data['chapter']}</td>
+                                <td>{$data['quiz_code']}</td>
                                 <td>{$data['question_solved']}</td>
                                 <td>{$data['correct']}</td>
                                 <td>{$data['wrong']}</td>
