@@ -4,7 +4,7 @@ session_start();
 if (!$_SESSION['admin']) {
     header("Location: adminLogin.php");
 }
-$currentPage = "chapter";
+$currentPage = "quiz_name";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@ $currentPage = "chapter";
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="staticBackdropLabel">Add Chapter</h5>
+                    <h5 class="modal-title" id="staticBackdropLabel">Add Quiz</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -36,14 +36,14 @@ $currentPage = "chapter";
                         <div class="form-group">
                             <div id="error-txt">This is an Error message!</div>
                             <div id="success-txt">This is an Succes message!</div>
-                            <label for="inputChapter">Chapter Name:</label>
-                            <input type="text" class="form-control" name="chapter" id="inputChapter">
+                            <label for="inputChapter">Quiz Code:</label>
+                            <input type="text" class="form-control" name="quizCode" id="inputChapter">
                         </div>
                     </form>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary" id="addChapBtn">Add Chapter</button>
+                    <button type="button" class="btn btn-primary" id="addChapBtn">Add Quiz</button>
                 </div>
             </div>
         </div>
@@ -51,29 +51,29 @@ $currentPage = "chapter";
     <div id="cont">
         <div id="tableCont">
             <div class="d-flex justify-content-between">
-                <h2>Chapters</h2>
+                <h2>Quizes</h2>
                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop">
-                    Add Chapter
+                    Add Quiz
                 </button>
             </div>
             <table id="table" class="table w-100">
                 <thead>
                     <tr>
                         <th>S.N.</th>
-                        <th>Chapter</th>
+                        <th>Quiz Code</th>
                         <th>No. of Questions</th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php
                     include "../php/config.php";
-                    $sql = mysqli_query($conn, "SELECT * FROM chapter");
+                    $sql = mysqli_query($conn, "SELECT * FROM quiz_names");
                     if ($sql) {
                         $rowNum = mysqli_num_rows($sql);
                         if ($rowNum) {
                             $count = 1;
                             while ($data = mysqli_fetch_assoc($sql)) {
-                                $sql2 = mysqli_query($conn, "SELECT * FROM questions WHERE chapter = '{$data['chapter_name']}'");
+                                $sql2 = mysqli_query($conn, "SELECT * FROM questions WHERE quiz_code = '{$data['quiz_code']}'");
                                 if ($sql2) {
                                     $rowNum = mysqli_num_rows($sql);
                                     $countQues = 0;
@@ -86,14 +86,14 @@ $currentPage = "chapter";
                                     }
                                     echo "<tr>
                                             <td>{$count}</td>
-                                            <td>{$data['chapter_name']}</td>
+                                            <td>{$data['quiz_code']}</td>
                                             <td>{$countQues}</td>
                                         </tr>";
                                     $count++;
                                 }
                             }
                         } else {
-                            echo "<tr><td colspan='2'>No any chapter Found</td></tr>";
+                            echo "<tr><td colspan='4'>No any Quiz Added</td></tr>";
                         }
                     }
                     ?>

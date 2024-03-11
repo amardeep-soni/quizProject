@@ -36,18 +36,19 @@ $currentPage = "question";
                         <div id="error-txt">This is an Error message!</div>
                         <div id="success-txt">This is an Succes message!</div>
                         <div class="form-group">
-                            <label for="inputChapter">Chapter Name:</label>
+                            <!-- <label for="inputChapter">Select Quiz Code:</label> -->
                             <!-- <input type="text" class="form-control" name="chapter" id="inputChapter"> -->
-                            <select name="chapter" class="form-control" id="selectChapter">
+                            <select name="quizCode" class="form-control" id="selectChapter">
+                                <option value="" selected>Select Quiz Code</option>
                                 <?php
                                 include "../php/config.php";
-                                $sql = mysqli_query($conn, "SELECT * FROM chapter");
+                                $sql = mysqli_query($conn, "SELECT * FROM quiz_names");
                                 if ($sql) {
                                     $rowNum = mysqli_num_rows($sql);
                                     if ($rowNum) {
                                         $count = 1;
                                         while ($data = mysqli_fetch_assoc($sql)) {
-                                            echo "<option>{$data['chapter_name']}</option>";
+                                            echo "<option value='{$data['quiz_code']}'>{$data['quiz_code']}</option>";
                                         }
                                     }
                                 }
@@ -99,7 +100,7 @@ $currentPage = "question";
                 <thead>
                     <tr>
                         <th>S.N.</th>
-                        <th>Chapter</th>
+                        <th>Quiz Code</th>
                         <th>Question</th>
                         <th>Option1</th>
                         <th>Option2</th>
@@ -119,7 +120,7 @@ $currentPage = "question";
                             while ($data = mysqli_fetch_assoc($sql)) {
                                 echo "<tr>
                                 <td>{$count}</td>
-                                <td>{$data['chapter']}</td>
+                                <td>{$data['quiz_code']}</td>
                                 <td>{$data['question']}</td>
                                 <td>{$data['option1']}</td>
                                 <td>{$data['option2']}</td>
@@ -130,7 +131,7 @@ $currentPage = "question";
                                 $count++;
                             }
                         } else {
-                            echo "<tr><td colspan='8'>No any Question Found</td></tr>";
+                            echo "<tr><td colspan='8'>No any Question Added</td></tr>";
                         }
                     }
                     ?>

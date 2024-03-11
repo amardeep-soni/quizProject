@@ -11,7 +11,7 @@ addChap.onclick = () => {
                 var data = xhr.response;
                 if (data == 'success') {
                     // console.log('success');
-                    successText.innerText = 'Chapter added Successfully😍';
+                    successText.innerText = 'Quiz added Successfully😍';
                     successText.style.display = 'block';
                     errorText.style.display = 'none';
                     setTimeout(() => {

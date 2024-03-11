@@ -41,8 +41,8 @@
                 <h5 class="text-center my-2">Here you can Give a Quiz (The Questions are added by the admin)</h5>
 
                 <div class="button d-flex align-items-center">
-                    <a href="selectQuiz.php" class="btn btn-primary px-5 py-2 mt-4">Admin</a>
-                    <a href="admin/users.php" class="btn btn-warning px-5 py-2 ml-3 mt-4">User</a>
+                    <a href="selectQuiz.php" class="btn btn-primary px-5 py-2 mt-4">User</a>
+                    <a href="admin/users.php" class="btn btn-warning px-5 py-2 ml-3 mt-4">Admin</a>
                 </div>
             </div>
         </div>

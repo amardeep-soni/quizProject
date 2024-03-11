@@ -1,14 +1,14 @@
 <?php
 include_once "../../php/config.php";
-$chapter = mysqli_real_escape_string($conn, $_POST['chapter']);
-if (!empty($chapter)) {
-    $sql = mysqli_query($conn, "SELECT * FROM chapter where `chapter_name`= '$chapter'");
+$quizCode = mysqli_real_escape_string($conn, $_POST['quizCode']);
+if (!empty($quizCode)) {
+    $sql = mysqli_query($conn, "SELECT * FROM quiz_Names where `quiz_code`= '$quizCode'");
     if ($sql) {
         $row_num = mysqli_num_rows($sql);
         if ($row_num) {
-            echo 'Chapter is already added!';
+            echo 'Choose different Quiz Code!';
         } else {
-            $sql2 = mysqli_query($conn, "INSERT INTO `chapter`(`chapter_name`) VALUES ('{$chapter}')");
+            $sql2 = mysqli_query($conn, "INSERT INTO `quiz_Names`(`quiz_code`) VALUES ('{$quizCode}')");
             if ($sql2) {
                 echo "success";
             } else {
@@ -19,5 +19,5 @@ if (!empty($chapter)) {
         echo "someting error occured!";
     }
 } else {
-    echo 'Please input Chapter Name';
+    echo 'Please input Quiz Code';
 }
