@@ -63,6 +63,7 @@ $currentPage = "quiz_code";
                         <th>S.N.</th>
                         <th>Quiz Code</th>
                         <th>Total Questions</th>
+                        <th>Status</th>
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -90,6 +91,14 @@ $currentPage = "quiz_code";
                                             <td>{$count}</td>
                                             <td>{$data['quiz_code']}</td>
                                             <td>{$countQues}</td>
+                                            <td>";
+                                    echo $data['isActive'] == true ?
+                                        "<span class='text-success font-weight-bold'>Online</span>" :
+                                        "<form action='./php/setQuizActive.php' method='GET'>
+                                                <input type='text' name='id' value='{$data['quiz_id']}' hidden>
+                                                <button class='btn btn-dark'>Active</button>
+                                        </form>";
+                                    echo "</td>
                                             <td>
                                                 <a href='question.php?code={$data['quiz_code']}' title='View Questions' class='btn btn-dark'>Questions <i class='fa-solid fa-arrow-right'></i></a>
                                             </td>
