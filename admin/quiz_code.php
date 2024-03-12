@@ -92,15 +92,22 @@ $currentPage = "quiz_code";
                                             <td>{$data['quiz_code']}</td>
                                             <td>{$countQues}</td>
                                             <td>";
-                                    echo $data['isActive'] == true ?
-                                        "<span class='text-success font-weight-bold'>Online</span>" :
-                                        "<form action='./php/setQuizActive.php' method='GET'>
-                                                <input type='text' name='id' value='{$data['quiz_id']}' hidden>
-                                                <button class='btn btn-dark'>Active</button>
-                                        </form>";
+                                    echo $data['status'] == 'online' ?
+                                        "<span class='text-success font-weight-bold'>Online</span>" : (
+                                            $data['status'] == 'offline' ?
+                                            "<span class='text-danger font-weight-bold'>Offline</span>" :
+                                            "<span class='text-warning font-weight-bold'>Closed</span>");
+                                    $newStatus = $data['status'] == 'offline' ? 'online' : ($data['status'] == 'online' ? 'closed' : ($data['status'] == 'closed' ? 'online' : ""));
                                     echo "</td>
                                             <td>
-                                                <a href='question.php?code={$data['quiz_code']}' title='View Questions' class='btn btn-dark'>Questions <i class='fa-solid fa-arrow-right'></i></a>
+                                                <div class='d-flex'>
+                                                <form action='./php/setQuizActive.php' method='GET'>
+                                                    <input type='text' name='id' value='{$data['quiz_id']}' hidden>
+                                                    <input type='text' name='newStatus' value='$newStatus' hidden>
+                                                    <button class='btn btn-dark'>Make $newStatus</button>
+                                                </form>
+                                                <a href='question.php?code={$data['quiz_code']}' title='View Questions' class='btn btn-dark ml-2'>Questions <i class='fa-solid fa-arrow-right'></i></a>
+                                                </div>
                                             </td>
                                         </tr>";
                                     $count++;
