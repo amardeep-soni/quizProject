@@ -52,9 +52,9 @@ body {
     text-align: center;
 }
 
-#tableCont tbody tr {
+/* #tableCont tbody tr {
     background-color: white;
-}
+} */
 
 #tableCont table th,
 #tableCont table td {
@@ -66,13 +66,18 @@ body {
     font-size: 18px;
 }
 
-#tableCont table tr:nth-child(even) {
+/* #tableCont table tbody tr {
     background-color: #cedde0;
-}
+} */
 
 #tableCont table tbody tr:hover {
-    background-color: #5366af;
-    color: white;
+    background-color: rgba(0, 0, 0, .05);
+}
+
+.table tbody tr {
+    background-color: white;
+    color: #495057;
+    border-color: #dee2e6;
 }
 
 #error-txt {

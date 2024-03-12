@@ -16,6 +16,7 @@ $currentPage = "quiz_code";
     <link rel="stylesheet" href="adminStyle.css">
     <title>Quiz App</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 </head>
 
@@ -61,7 +62,8 @@ $currentPage = "quiz_code";
                     <tr>
                         <th>S.N.</th>
                         <th>Quiz Code</th>
-                        <th>No. of Questions</th>
+                        <th>Total Questions</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -88,6 +90,9 @@ $currentPage = "quiz_code";
                                             <td>{$count}</td>
                                             <td>{$data['quiz_code']}</td>
                                             <td>{$countQues}</td>
+                                            <td>
+                                                <a href='question.php?code={$data['quiz_code']}' title='View Questions' class='btn btn-dark'>Questions <i class='fa-solid fa-arrow-right'></i></a>
+                                            </td>
                                         </tr>";
                                     $count++;
                                 }
