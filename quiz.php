@@ -129,7 +129,7 @@ $currentPage = "quiz";
                                     <button onclick="location.href='score.php';">Go in Score</button>
                                 </div>`;
                                 let xhr = new XMLHttpRequest();
-                                xhr.open("GET", "php/addResult.php?code=" + code + "&score=" + resultCount + "&ques=" + questionCount, true);
+                                xhr.open("GET", "php/addResult.php?code=" + code + "&correct=" + resultCount + "&wrong=" + (questionCount - resultCount), true);
                                 xhr.onload = () => {
                                     if (xhr.readyState == XMLHttpRequest.DONE) {
                                         if (xhr.status == 200) {

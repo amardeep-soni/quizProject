@@ -31,7 +31,6 @@ $currentPage = "score";
                         <th>S.N.</th>
                         <th>Name</th>
                         <th>Quiz Code</th>
-                        <th>Question Solved</th>
                         <th>Correct</th>
                         <th>Wrong</th>
                     </tr>
@@ -49,7 +48,6 @@ $currentPage = "score";
                                 <td>{$count}</td>
                                 <td>{$data['name']}</td>
                                 <td>{$data['quiz_code']}</td>
-                                <td>{$data['question_solved']}</td>
                                 <td>{$data['correct']}</td>
                                 <td>{$data['wrong']}</td>
                             </tr>";

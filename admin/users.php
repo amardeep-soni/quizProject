@@ -31,7 +31,6 @@ $currentPage = "users";
                         <th>S.N.</th>
                         <th>Name</th>
                         <th>Email</th>
-                        <th>Password</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -47,7 +46,6 @@ $currentPage = "users";
                                         <td>{$count}</td>
                                         <td>{$data['name']}</td>
                                         <td>{$data['email']}</td>
-                                        <td>{$data['password']}</td>
                                      </tr>";
                                 $count++;
                             }
