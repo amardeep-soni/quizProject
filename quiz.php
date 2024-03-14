@@ -125,7 +125,7 @@ $currentPage = "quiz";
                                 quiz.innerHTML = `
                                     <h2>You answered ${resultCount}/${questionCount} questions correctly</h2>
                                 <div class="d-flex">
-                                    <button onclick="location.href='selectQuiz.php';">Give Quiz Again</button>
+                                    <button onclick="location.href='selectQuiz.php';">Give Another Quiz</button>
                                     <button onclick="location.href='score.php';">Go in Score</button>
                                 </div>`;
                                 let xhr = new XMLHttpRequest();

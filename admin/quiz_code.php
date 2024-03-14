@@ -70,7 +70,7 @@ $currentPage = "quiz_code";
                 <tbody>
                     <?php
                     include "../php/config.php";
-                    $sql = mysqli_query($conn, "SELECT * FROM quiz_names");
+                    $sql = mysqli_query($conn, "SELECT * FROM quiz_codes");
                     if ($sql) {
                         $rowNum = mysqli_num_rows($sql);
                         if ($rowNum) {

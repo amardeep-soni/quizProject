@@ -37,7 +37,7 @@ $currentPage = "quiz";
                 <?php
                 include_once "php/config.php";
                 $output = array();
-                $sql = mysqli_query($conn, "SELECT * FROM quiz_names where `status` = 'online'");
+                $sql = mysqli_query($conn, "SELECT * FROM quiz_codes where `status` = 'online'");
                 if ($sql) {
                     $rowNum = mysqli_num_rows($sql);
                     if ($rowNum) {

@@ -18,7 +18,7 @@ loginBtn.onclick = () => {
                     successText.style.display = 'block';
                     errorText.style.display = 'none';
                     setTimeout(() => {
-                        location.href = "users.php";
+                        location.href = "quiz_code.php";
                     }, 1500);
                 } else {
                     errorText.textContent = data;
